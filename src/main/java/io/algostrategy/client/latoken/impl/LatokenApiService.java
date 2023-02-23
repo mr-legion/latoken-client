@@ -2,6 +2,7 @@ package io.algostrategy.client.latoken.impl;
 
 import io.algostrategy.client.latoken.domain.general.Asset;
 import io.algostrategy.client.latoken.domain.general.AssetNetwork;
+import io.algostrategy.client.latoken.domain.market.MarketInfo;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
@@ -19,4 +20,9 @@ public interface LatokenApiService {
 
     @GET("/v2/transaction/bindings")
     Call<List<AssetNetwork>> getAssetNetworks();
+
+    // Market endpoints
+
+    @GET("/v2/pair")
+    Call<List<MarketInfo>> getMarketInfo();
 }
