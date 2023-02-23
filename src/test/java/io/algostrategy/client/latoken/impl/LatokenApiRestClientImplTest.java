@@ -5,13 +5,13 @@ import io.algostrategy.client.latoken.LatokenApiRestClient;
 import io.algostrategy.client.latoken.domain.general.Asset;
 import io.algostrategy.client.latoken.domain.general.AssetNetwork;
 import io.algostrategy.client.latoken.domain.market.MarketInfo;
+import io.algostrategy.client.latoken.domain.market.MarketTicker;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class LatokenApiRestClientImplTest {
 
@@ -33,5 +33,11 @@ public class LatokenApiRestClientImplTest {
     public void getMarketInfo_ShouldReturnMarketInfo() {
         List<MarketInfo> marketInfo = latokenApiRestClient.getMarketInfo();
         assertThat(marketInfo, is(not(empty())));
+    }
+
+    @Test
+    public void getMarketTickers_ShouldReturnMarketTickers() {
+        List<MarketTicker> marketTickers = latokenApiRestClient.getMarketTickers();
+        assertThat(marketTickers, is(not(empty())));
     }
 }

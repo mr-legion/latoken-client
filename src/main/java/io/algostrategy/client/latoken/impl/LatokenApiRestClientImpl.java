@@ -4,6 +4,7 @@ import io.algostrategy.client.latoken.LatokenApiRestClient;
 import io.algostrategy.client.latoken.domain.general.Asset;
 import io.algostrategy.client.latoken.domain.general.AssetNetwork;
 import io.algostrategy.client.latoken.domain.market.MarketInfo;
+import io.algostrategy.client.latoken.domain.market.MarketTicker;
 
 import java.util.List;
 
@@ -35,5 +36,10 @@ public class LatokenApiRestClientImpl implements LatokenApiRestClient {
     @Override
     public List<MarketInfo> getMarketInfo() {
         return LatokenApiServiceGenerator.executeSync(latokenApiService.getMarketInfo());
+    }
+
+    @Override
+    public List<MarketTicker> getMarketTickers() {
+        return LatokenApiServiceGenerator.executeSync(latokenApiService.getMarketTickers());
     }
 }

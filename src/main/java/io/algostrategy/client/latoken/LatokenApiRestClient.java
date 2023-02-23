@@ -3,6 +3,7 @@ package io.algostrategy.client.latoken;
 import io.algostrategy.client.latoken.domain.general.Asset;
 import io.algostrategy.client.latoken.domain.general.AssetNetwork;
 import io.algostrategy.client.latoken.domain.market.MarketInfo;
+import io.algostrategy.client.latoken.domain.market.MarketTicker;
 
 import java.util.List;
 
@@ -35,4 +36,11 @@ public interface LatokenApiRestClient {
      * @return market info
      */
     List<MarketInfo> getMarketInfo();
+
+    /**
+     * Get market ticker information.
+     *
+     * @return market tickers
+     */
+    List<MarketTicker> getMarketTickers();
 }

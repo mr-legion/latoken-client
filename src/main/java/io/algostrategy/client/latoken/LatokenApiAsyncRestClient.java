@@ -3,6 +3,7 @@ package io.algostrategy.client.latoken;
 import io.algostrategy.client.latoken.domain.general.Asset;
 import io.algostrategy.client.latoken.domain.general.AssetNetwork;
 import io.algostrategy.client.latoken.domain.market.MarketInfo;
+import io.algostrategy.client.latoken.domain.market.MarketTicker;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -36,4 +37,11 @@ public interface LatokenApiAsyncRestClient {
      * @return market info
      */
     CompletableFuture<List<MarketInfo>> getMarketInfo();
+
+    /**
+     * Get market ticker information (asynchronous).
+     *
+     * @return market tickers
+     */
+    CompletableFuture<List<MarketTicker>> getMarketTickers();
 }
