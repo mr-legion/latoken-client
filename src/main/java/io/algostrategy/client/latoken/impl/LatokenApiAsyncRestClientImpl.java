@@ -5,6 +5,7 @@ import io.algostrategy.client.latoken.domain.general.Asset;
 import io.algostrategy.client.latoken.domain.general.AssetNetwork;
 import io.algostrategy.client.latoken.domain.market.MarketInfo;
 import io.algostrategy.client.latoken.domain.market.MarketTicker;
+import io.algostrategy.client.latoken.domain.market.OrderBook;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -49,6 +50,13 @@ public class LatokenApiAsyncRestClientImpl implements LatokenApiAsyncRestClient 
     public CompletableFuture<List<MarketTicker>> getMarketTickers() {
         CompletableFuture<List<MarketTicker>> future = new CompletableFuture<>();
         latokenApiService.getMarketTickers().enqueue(new RetrofitCallbackAdapter<>(future));
+        return future;
+    }
+
+    @Override
+    public CompletableFuture<OrderBook> getOrderBook(String baseCurrency, String quoteCurrency, Integer limit) {
+        CompletableFuture<OrderBook> future = new CompletableFuture<>();
+        latokenApiService.getOrderBook(baseCurrency, quoteCurrency, limit).enqueue(new RetrofitCallbackAdapter<>(future));
         return future;
     }
 }
