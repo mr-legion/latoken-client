@@ -1,6 +1,7 @@
 package io.algostrategy.client.latoken;
 
 import io.algostrategy.client.latoken.domain.general.Asset;
+import io.algostrategy.client.latoken.domain.general.AssetNetwork;
 
 import java.util.List;
 
@@ -17,4 +18,11 @@ public interface LatokenApiRestClient {
      * @return assets
      */
     List<Asset> getAssets();
+
+    /**
+     * Get all asset networks.
+     *
+     * @return assets networks
+     */
+    List<AssetNetwork> getAssetNetworks();
 }

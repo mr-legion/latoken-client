@@ -2,6 +2,7 @@ package io.algostrategy.client.latoken.impl;
 
 import io.algostrategy.client.latoken.LatokenApiRestClient;
 import io.algostrategy.client.latoken.domain.general.Asset;
+import io.algostrategy.client.latoken.domain.general.AssetNetwork;
 
 import java.util.List;
 
@@ -21,5 +22,10 @@ public class LatokenApiRestClientImpl implements LatokenApiRestClient {
     @Override
     public List<Asset> getAssets() {
         return LatokenApiServiceGenerator.executeSync(latokenApiService.getAssets());
+    }
+
+    @Override
+    public List<AssetNetwork> getAssetNetworks() {
+        return LatokenApiServiceGenerator.executeSync(latokenApiService.getAssetNetworks());
     }
 }

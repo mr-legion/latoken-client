@@ -1,6 +1,7 @@
 package io.algostrategy.client.latoken.impl;
 
 import io.algostrategy.client.latoken.domain.general.Asset;
+import io.algostrategy.client.latoken.domain.general.AssetNetwork;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
@@ -15,4 +16,7 @@ public interface LatokenApiService {
 
     @GET("/v2/currency")
     Call<List<Asset>> getAssets();
+
+    @GET("/v2/transaction/bindings")
+    Call<List<AssetNetwork>> getAssetNetworks();
 }

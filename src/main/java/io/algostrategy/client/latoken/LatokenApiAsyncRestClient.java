@@ -1,6 +1,7 @@
 package io.algostrategy.client.latoken;
 
 import io.algostrategy.client.latoken.domain.general.Asset;
+import io.algostrategy.client.latoken.domain.general.AssetNetwork;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -18,4 +19,11 @@ public interface LatokenApiAsyncRestClient {
      * @return assets
      */
     CompletableFuture<List<Asset>> getAssets();
+
+    /**
+     * Get all asset networks (asynchronous).
+     *
+     * @return assets networks
+     */
+    CompletableFuture<List<AssetNetwork>> getAssetNetworks();
 }

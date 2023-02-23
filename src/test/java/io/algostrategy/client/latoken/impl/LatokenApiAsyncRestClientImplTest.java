@@ -3,6 +3,7 @@ package io.algostrategy.client.latoken.impl;
 import io.algostrategy.client.latoken.LatokenApiAsyncRestClient;
 import io.algostrategy.client.latoken.LatokenApiClientFactory;
 import io.algostrategy.client.latoken.domain.general.Asset;
+import io.algostrategy.client.latoken.domain.general.AssetNetwork;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -19,5 +20,11 @@ public class LatokenApiAsyncRestClientImplTest {
     public void getAssets_ShouldReturnAssets() throws ExecutionException, InterruptedException {
         List<Asset> assets = latokenApiAsyncRestClient.getAssets().get();
         assertThat(assets, is(not(empty())));
+    }
+
+    @Test
+    public void getAssetNetworks_ShouldReturnAssetNetworks() throws ExecutionException, InterruptedException {
+        List<AssetNetwork> assetNetworks = latokenApiAsyncRestClient.getAssetNetworks().get();
+        assertThat(assetNetworks, is(not(empty())));
     }
 }
