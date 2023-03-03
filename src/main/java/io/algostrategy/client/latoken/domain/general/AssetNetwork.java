@@ -22,4 +22,32 @@ public class AssetNetwork {
 
     @JsonProperty("bindings")
     private List<Network> networks;
+
+    public Double getMinFixedWithdrawFee() {
+
+        Double minFee = null;
+
+        for (Network network : networks) {
+            Double fee = network.getFixedWithdrawFee();
+            if (minFee == null || (fee != null && fee < minFee)) {
+                minFee = fee;
+            }
+        }
+
+        return minFee;
+    }
+
+    public Double getMinRatioWithdrawFee() {
+
+        Double minFee = null;
+
+        for (Network network : networks) {
+            Double fee = network.getRatioWithdrawFee();
+            if (minFee == null || (fee != null && fee < minFee)) {
+                minFee = fee;
+            }
+        }
+
+        return minFee;
+    }
 }
